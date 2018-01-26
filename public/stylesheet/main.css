@@ -400,7 +400,8 @@ p.copyright{
 
 
 @media(min-width: 500px){
-    input{
+    input, 
+    input:focus{
         width: 360px;
         z-index: 29;
     }
