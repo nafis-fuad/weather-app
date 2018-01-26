@@ -401,7 +401,8 @@ p.copyright{
 
 @media(min-width: 500px){
     input, 
-    input:focus{
+    input:focus,
+    input:active{
         width: 360px;
         z-index: 29;
     }
