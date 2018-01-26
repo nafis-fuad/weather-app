@@ -1,0 +1,21 @@
+doctype html
+//if lt IE 7
+	html.no-js.lt-ie9.lt-ie8.lt-ie7  
+//if IE 7
+	html.no-js.lt-ie9.lt-ie8  
+//if IE 8
+	html.no-js.lt-ie9  
+// [if gt IE 8] <!
+html.no-js
+	// <![endif]
+	include includes/head.pug
+	body
+		//if lt IE 7
+			p.browsehappy
+				| You are using an 
+				strong outdated
+				|  browser. Please 
+				a(href="#") upgrade your browser
+				|  to improve your experience.
+		block main
+		include includes/js.pug

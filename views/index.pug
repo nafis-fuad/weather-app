@@ -1,0 +1,14 @@
+extends layout
+	
+block main
+	#loader
+		div
+		div
+		div
+	.wrapper.fade-in
+		img#searchIcon.animated.infinite.pulse(src="/static/img/searchIcon.svg" alt="search the weather icon")
+		img#sun.animated.infinite.pulse(src="/static/img/sun.svg" alt="Sun icon")
+		img#moon.animated.infinite.pulse(src="/static/img/moon.svg" alt="Moon icon")
+		include includes/form.pug
+		include includes/footer.pug
+

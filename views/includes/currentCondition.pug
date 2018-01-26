@@ -1,0 +1,30 @@
+if currentIsDay
+	img#weatherStatusIcon.animated.infinite.pulse(src=`/static/img/currentDay/${currentConditionIconCode}.svg` alt="the weather icon")
+else
+	img#weatherStatusIcon.animated.infinite.pulse(src=`/static/img/currentNight/${currentConditionIconCode}.svg` alt="the weather icon")
+ul#weather
+	li.blank Have a nice day...
+	li.temperature
+		| #{currentTemperature} 
+		sup
+			small °C
+	li
+		span condition:
+		|  #{currentConditionMessage}
+	li
+		span Area:
+		|  #{locationName}, #{locationCountry}
+	li
+		span precipitaion:
+		|  #{currentPrecipitation}
+	li
+		span humidity:
+		|  #{currentHumidity}
+	li
+		span wind:
+		|  #{currentWind}
+	li
+		span Date & Time:
+		|  #{currentDateAndTime}
+	li
+		a.button(href="/") search again

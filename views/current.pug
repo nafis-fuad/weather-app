@@ -1,0 +1,9 @@
+extends layout
+
+block main
+	if currentIsDay
+		.dayWrapper.fade-in
+			include includes/currentCondition.pug
+	else
+		.nightWrapper.fade-in
+			include includes/currentCondition.pug

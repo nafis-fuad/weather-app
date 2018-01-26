@@ -1,0 +1,13 @@
+extends layout
+
+block main
+  .wrapper
+    #error
+      p
+        | An error occured. Please refresh the page or try again later. (Maybe a storm blew our database away...)
+      p
+      p For geeks: error code, status, message.
+    img#searchIcon(src="/static/img/searchIcon.svg" alt="search the weather icon")
+    img#sun(src="/static/img/sun.svg" alt="Sun icon")
+    img#moon(src="/static/img/moon.svg" alt="Moon icon")
+    include includes/form.pug
