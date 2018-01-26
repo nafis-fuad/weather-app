@@ -6,6 +6,10 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false}));
+
+
+app.set('port', (process.env.PORT || 3000));
+
 app.use('/static', express.static('public'));
 
 app.set('view engine', 'pug');
@@ -27,6 +31,7 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log('The application is running on localhost:3000!')
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
