@@ -402,6 +402,7 @@ p.copyright{
 @media(min-width: 500px){
     input{
         width: 360px;
+        z-index: 29;
     }
     #searchIcon, #weatherStatusIcon{
         margin-top: 15px;
