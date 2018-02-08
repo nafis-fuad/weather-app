@@ -10,7 +10,8 @@ block main
 			p
 				| An error occured. Please refresh the page or try again later. (Maybe a storm blew our database away...)
 			p
-			p For geeks: error code, status, message.
+			if error, message
+				p For geeks: #{error}, #{message}.
 		img#searchIcon.animated.infinite.pulse(src="/static/img/searchIcon.svg" alt="search the weather icon")
 		img#sun.animated.infinite.pulse(src="/static/img/sun.svg" alt="Sun icon")
 		img#moon.animated.infinite.pulse(src="/static/img/moon.svg" alt="Moon icon")

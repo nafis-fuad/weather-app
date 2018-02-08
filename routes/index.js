@@ -58,8 +58,4 @@ router.post('/', (req, res) => {
 });
 
 
-router.get("/error", (req, res) => {
-  return res.render("error");
-});
-
 module.exports = router;
