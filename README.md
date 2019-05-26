@@ -3,7 +3,7 @@
 A simple Weather App built using Express, Pug and the Apixu API.
 This is a simple demo project. :smile:
 
-![Weather App Running in The Browser]()
+![Weather App Running in The Browser](./public/img/demo.png)
 
 ## Tech Stack
 
