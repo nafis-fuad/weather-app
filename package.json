@@ -1,25 +1,33 @@
 {
-  "name": "weather",
-  "version": "1.0.0",
-  "description": "A sample Weather Web app using Express ",
-  "engines": {
-    "node": "8.9.4"
-  },
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "pug": "^2.0.3",
-    "request": "^2.85.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.17.3"
-  }
+	"name": "weather-current",
+	"version": "1.0.0",
+	"description": "A simple Weather App built using Express, Pug and the Apixu API",
+	"engines": {
+		"node": "v10.15.3"
+	},
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"watch": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"Weather App",
+		"Express",
+		"Pug",
+		"Apixu API",
+		"Weather Web App"
+	],
+	"author": "Nafis Fuad",
+	"license": "MIT",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"dotenv": "^8.0.0",
+		"express": "^4.17.1",
+		"pug": "^2.0.3",
+		"request": "^2.88.0"
+	},
+	"devDependencies": {
+		"nodemon": "^1.19.1"
+	}
 }
