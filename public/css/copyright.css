@@ -1,0 +1,9 @@
+p.copyright {
+	grid-row: 5;
+	grid-column: 2;
+	align-self: end;
+	color: #f62c73;
+}
+.copyright > span {
+	font-size: 1.52em;
+}
