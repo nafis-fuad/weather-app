@@ -18,7 +18,7 @@ This is a simple demo project. :smile:
 1. User can search for a location
 2. The user is presented with that location's weather information
 3. The background of the app changes based on timing, so if it's day, then the background is lighter, if it's night, then darker.
-4. The information is presented in a digestable manner.
+4. The information is presented in a digestible manner.
 5. Based on the weather status, an icon will be shown to the user.
 6. There's nice animations to make it lively. :wink:
 7. The web app is responsive
