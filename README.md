@@ -2,8 +2,9 @@
 
 A simple Weather App built using Express, Pug and the Apixu API.
 This is a simple demo project. :smile:
+[View the live web app here.](https://weather-current.herokuapp.com)
 
-![Weather App Running in The Browser](./public/img/demo.png)
+[![Weather App Running in The Browser](./public/img/demo.png)](https://weather-current.herokuapp.com)
 
 ## Tech Stack
 
