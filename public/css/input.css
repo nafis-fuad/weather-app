@@ -1,0 +1,42 @@
+/* styles for the input fields */
+input {
+	font-family: 'Roboto', 'Varela Round', sans-serif, Helvetica, serif;
+	font-size: 18px;
+	padding: 31px 0;
+	margin: 10px 0;
+	text-align: center;
+	border: none;
+	color: #f62c73;
+	background: wheat;
+	grid-column: 1;
+	grid-row: 1;
+	align-self: center;
+	justify-content: center;
+	box-shadow: none;
+	transition: box-shadow 0.53s cubic-bezier(0.41, -0.41, 0.6, 1.56);
+}
+/* change the placeHolder color */
+input::-webkit-input-placeholder {
+	color: #f62c73 !important;
+}
+input:-moz-placeholder {
+	/* Firefox 18- */
+	color: #f62c73 !important;
+}
+
+input::-moz-placeholder {
+	/* Firefox 19+ */
+	color: #f62c73 !important;
+}
+
+input:-ms-input-placeholder {
+	color: #f62c73 !important;
+}
+input:focus {
+	outline: none;
+	-webkit-box-shadow: 0px -7px 0px 0px #f62c73;
+	-moz-box-shadow: 0px -7px 0px 0px #f62c73;
+	box-shadow: 0px -7px 0px 0px #f62c73;
+}
+
+/* styles for the input field */
