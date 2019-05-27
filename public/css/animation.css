@@ -1,0 +1,78 @@
+/* animations for the page */
+.animated {
+	animation-duration: 3.4s;
+	animation-fill-mode: both;
+}
+
+.animated.infinite {
+	animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.pulse {
+	animation-name: pulse;
+}
+
+/* for animations */
+
+/* the page loader styling... */
+#loader {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	width: 150px;
+	height: 150px;
+	margin: -75px 0 0 -75px;
+	border: 16px solid #f62c73;
+	border-radius: 50%;
+	border-top: 16px solid #fbabc7;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* style the loader  */
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	opacity: 0;
+	animation: fadeIn 0.65s ease-in 1 forwards;
+}
