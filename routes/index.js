@@ -15,32 +15,27 @@ router.post('/', (req, res) => {
 	const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`
 
 	request(url, (err, response, body) => {
-		if (err) {
+		if (err || JSON.parse(body).success === false) {
 			res.render('error');
 		} else {
-			let weather = JSON.parse(body);
-			console.log(typeof weather.current)
-			if (response.statusCode !== 200) {
-				res.render('error');
-			} else {
-				res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-				res.setHeader('Pragma', 'no-cache');
-				res.setHeader('Expires', 0);
+			res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+			res.setHeader('Pragma', 'no-cache');
+			res.setHeader('Expires', 0);
 
-				const templateData = {
-					locationName: weather.location.name,
-					locationCountry: weather.location.country,
-					currentTemperature: weather.current.temperature,
-					currentConditionMessage: weather.current.weather_descriptions,
-					currentPrecipitation: weather.current.precip,
-					currentHumidity: weather.current.humidity,
-					currentWind: weather.current.wind_speed,
-					currentDateAndTime: response.headers.date,
-					currentIsDay: weather.current.is_day !== "no",
-				};
+			const weather = JSON.parse(body);
 
-				res.render('current', templateData);
-			}
+			const templateData = {
+				locationName: weather.location.name,
+				locationCountry: weather.location.country,
+				currentTemperature: weather.current.temperature,
+				currentConditionMessage: weather.current.weather_descriptions,
+				currentPrecipitation: weather.current.precip,
+				currentHumidity: weather.current.humidity,
+				currentWind: weather.current.wind_speed,
+				currentDateAndTime: response.headers.date,
+				currentIsDay: weather.current.is_day !== "no",
+			};
+			res.render('current', templateData);
 		}
 	});
 });
