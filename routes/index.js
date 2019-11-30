@@ -6,19 +6,20 @@ const request = require('request');
 const config = require('../config.js');
 const apiKey = config.key;
 
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
 	return res.render('index');
 });
 
 router.post('/', (req, res) => {
-	let city = req.body.placename;
-	let url = `https://api.apixu.com/v1/current.json?key=${apiKey}&q=${city}`;
+	const city = req.body.placename;
+	const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`
 
 	request(url, (err, response, body) => {
 		if (err) {
 			res.render('error');
 		} else {
 			let weather = JSON.parse(body);
+			console.log(typeof weather.current)
 			if (response.statusCode !== 200) {
 				res.render('error');
 			} else {
@@ -26,28 +27,16 @@ router.post('/', (req, res) => {
 				res.setHeader('Pragma', 'no-cache');
 				res.setHeader('Expires', 0);
 
-				const locationName = weather.location.name;
-				const locationCountry = weather.location.country;
-				const currentWeather = weather.current;
-				const currentIsDay = currentWeather.is_day;
-				const currentTemperature = currentWeather.temp_c;
-				const currentConditionMessage = currentWeather.condition.text;
-				const currentPrecipitation = currentWeather.precip_mm;
-				const currentHumidity = currentWeather.humidity;
-				const currentWind = currentWeather.wind_mph;
-				const currentDateAndTime = response.headers.date;
-				const currentConditionIconCode = currentWeather.condition.code;
 				const templateData = {
-					locationName,
-					locationCountry,
-					currentTemperature,
-					currentConditionMessage,
-					currentPrecipitation,
-					currentHumidity,
-					currentWind,
-					currentDateAndTime,
-					currentIsDay,
-					currentConditionIconCode
+					locationName: weather.location.name,
+					locationCountry: weather.location.country,
+					currentTemperature: weather.current.temperature,
+					currentConditionMessage: weather.current.weather_descriptions,
+					currentPrecipitation: weather.current.precip,
+					currentHumidity: weather.current.humidity,
+					currentWind: weather.current.wind_speed,
+					currentDateAndTime: response.headers.date,
+					currentIsDay: weather.current.is_day !== "no",
 				};
 
 				res.render('current', templateData);
