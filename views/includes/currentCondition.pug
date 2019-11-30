@@ -1,7 +1,7 @@
 if currentIsDay
-	img#weatherStatusIcon.animated.infinite.pulse(src=`/static/img/currentDay/${currentConditionIconCode}.svg` alt="the weather icon")
+	img#weatherStatusIcon.animated.infinite.pulse(src=`/static/img/sun.svg` alt="the weather icon")
 else
-	img#weatherStatusIcon.animated.infinite.pulse(src=`/static/img/currentNight/${currentConditionIconCode}.svg` alt="the weather icon")
+	img#weatherStatusIcon.animated.infinite.pulse(src=`/static/img/moon.svg` alt="the weather icon")
 ul#weather
 	li.blank Have a nice day...
 	li.temperature
